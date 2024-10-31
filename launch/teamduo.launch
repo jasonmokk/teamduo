@@ -11,7 +11,7 @@
   <param name="/leadcar/x0" type="double" value="40.0" />
 
   <!-- sets the initial velocity of the ego car. -->
-  <param name="/egocar/v0" type="double" value="10.0" />
+  <param name="/egocar/v0" type="double" value="1.0" />
   <!-- sets the initial position of the ego car. -->
   <param name="/egocar/x0" type="double" value="0.0" />
 
@@ -21,6 +21,43 @@
 	<remap from="/car/state/vel_x" to="/leadcar/vel_x" />
   </node>
   
+  <!-- fixing these errors from roswtf
+  
+  Found 2 warning(s).
+  Warnings are things that may be just fine, but are sometimes at fault
+
+  WARNING The following node subscriptions are unconnected:
+   * /egocar/carsimplesimulink_node:
+     * /egocar/cmd_accel
+   * /egocar/teamduo_node:
+     * /lead_dist
+     * /car/state/vel_x
+
+  WARNING No tf messages
+  
+  this means remapping from the rostopic lists:
+  
+  root@dd4495e180e7:/ros/catkin_ws# rostopic list
+  /car/state/vel_x
+  /clock
+  /cmd_accel
+  /egocar/cmd_accel
+  /egocar/lead_dist
+  /egocar/odom_x
+  /egocar/rel_vel
+  /egocar/vel_x
+  /lead_dist
+  /leadcar/odom
+  /leadcar/vel_x
+  /rosout
+  /rosout_agg
+  
+  new maps:
+  * /cmd_accel --> /egocar/cmd_accel
+  * /lead_dist --> /egocar/lead_dist
+  * /car/state/vel_x --> /egocar/vel_x
+  
+  -->
   
   <!-- By putting this car into a namespace, we keep the variables clean -->
   <group ns="leadcar">
@@ -33,6 +70,9 @@
 	  <node pkg="carsimplesimulink" type="carsimplesimulink" name="carsimplesimulink_node">
    	  </node>
 	  <node pkg="teamduo" type="teamduo" name="teamduo_node">
+	    <remap from="/cmd_accel" to="/egocar/cmd_accel"/>
+	    <remap from="/lead_dist" to="/egocar/lead_dist"/>
+	    <remap from="/car/state/vel_x" to="/egocar/vel_x"/>
 	  </node>
   </group>
 
