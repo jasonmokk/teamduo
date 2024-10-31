@@ -1,11 +1,11 @@
 //
 // File rosnodeinterface.cpp
 //
-// Code generated for Simulink model 'teamduo'.
+// Code generated for Simulink model 'TeamDuo0x2810x29'.
 //
 // Model version                  : 1.4
-// Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
-// C/C++ source code generated on : Tue Oct 29 12:00:01 2024
+// Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
+// C/C++ source code generated on : Wed Oct 30 21:09:07 2024
 //
 
 #ifdef _MSC_VER
@@ -30,11 +30,17 @@
 
 #endif                                 //_MSC_VER
 
-#include "teamduo.h"
+#include "TeamDuo0x2810x29.h"
 #include "rosnodeinterface.h"
 #include <thread>
 #include <chrono>
 #include <utility>
+#undef ROS_SET_RTM_ERROR_STATUS
+#undef ROS_GET_RTM_ERROR_STATUS
+#undef ROS_RTM_STEP_TASK
+#define ROS_SET_RTM_ERROR_STATUS(status) rtmSetErrorStatus(TeamDuo0x2810x29_M,(status));
+#define ROS_GET_RTM_ERROR_STATUS()     rtmGetErrorStatus(TeamDuo0x2810x29_M)
+#define ROS_RTM_STEP_TASK(id)          rtmStepTask({$ModelRTMVarName%},id)
 #ifndef RT_MEMORY_ALLOCATION_ERROR_DEF
 #define RT_MEMORY_ALLOCATION_ERROR_DEF
 
@@ -65,11 +71,11 @@ namespace ros
     {
       try {
         mNode = std::make_shared<ros::NodeHandle>();
-        ROS_INFO("** Starting the model \"teamduo\" **\n");
+        ROS_INFO("** Starting the model \"TeamDuo0x2810x29\" **\n");
 
         // initialize the model which will initialize the publishers and subscribers
-        rtmSetErrorStatus(teamduo_M, (NULL));
-        teamduo_initialize();
+        ROS_SET_RTM_ERROR_STATUS(NULL);
+        TeamDuo0x2810x29_initialize();
 
         // create the threads for the rates in the Model
         mBaseRateThread = std::make_shared<std::thread>(&NodeInterface::
@@ -98,13 +104,13 @@ namespace ros
 
 #ifndef rtmGetStopRequested
 
-      return (!(rtmGetErrorStatus(teamduo_M)
+      return (!(ROS_GET_RTM_ERROR_STATUS()
                 == (NULL)));
 
 #else
 
-      return (!(rtmGetErrorStatus(teamduo_M)
-                == (NULL)) || rtmGetStopRequested(teamduo_M));
+      return (!(ROS_GET_RTM_ERROR_STATUS()
+                == (NULL)) || rtmGetStopRequested(TeamDuo0x2810x29_M));
 
 #endif
 
@@ -122,7 +128,7 @@ namespace ros
           mSchedulerTimer.reset();
         }
 
-        teamduo_terminate();
+        TeamDuo0x2810x29_terminate();
         mNode.reset();
       }
     }
@@ -140,7 +146,7 @@ namespace ros
     // Base-rate task
     void NodeInterface::baseRateTask(void)
     {
-      mRunModel = (rtmGetErrorStatus(teamduo_M) ==
+      mRunModel = (ROS_GET_RTM_ERROR_STATUS() ==
                    (NULL));
       while (mRunModel) {
         mBaseRateSem.wait();
@@ -153,8 +159,8 @@ namespace ros
 
         if (!mRunModel)
           break;
-        teamduo_step(
-                     );
+        TeamDuo0x2810x29_step(
+                              );
         mRunModel = !NodeInterface::getStopRequestedFlag();
       }
 

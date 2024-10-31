@@ -275,8 +275,9 @@ typedef ssSolverInfo RTWSolverInfo;
 #define rtsiSetIsContModeFrozen(S, val) ((S)->isContModeFrozen = (val))
 #define rtsiGetIsContModeFrozen(S) ((S)->isContModeFrozen)
 
-#define rtsiIsModeUpdateTimeStep(S) \
-    (rtsiGetSimTimeStep(S) == MAJOR_TIME_STEP || rtsiGetIsMinorTimeStepWithModeChange(S))
+#define rtsiIsModeUpdateTimeStep(S)                                                           \
+    ((rtsiGetSimTimeStep(S) == MAJOR_TIME_STEP || rtsiGetIsMinorTimeStepWithModeChange(S)) && \
+     (!rtsiGetIsContModeFrozen(S)))
 
 #define rtsiSetSolverZcSignalPtr(S, zcp) ((S)->zcSignalPtr = (zcp))
 #define rtsiSetSolverZcSignalVector(S, zcp) (*((S)->zcSignalPtr) = (zcp))

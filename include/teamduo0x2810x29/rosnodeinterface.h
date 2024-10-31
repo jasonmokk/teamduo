@@ -1,11 +1,11 @@
 //
 // File rosnodeinterface.h
 //
-// Code generated for Simulink model 'teamduo'.
+// Code generated for Simulink model 'TeamDuo0x2810x29'.
 //
 // Model version                  : 1.4
-// Simulink Coder version         : 24.1 (R2024a) 19-Nov-2023
-// C/C++ source code generated on : Tue Oct 29 12:00:01 2024
+// Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
+// C/C++ source code generated on : Wed Oct 30 21:09:07 2024
 //
 
 #ifndef _ROS_MATLAB_NODEINTERFACE_
@@ -30,8 +30,8 @@
 
 #endif                                 //_MSC_VER
 
-#include "teamduo.h"
-#include "teamduo_types.h"
+#include "TeamDuo0x2810x29.h"
+#include "TeamDuo0x2810x29_types.h"
 #include "rtwtypes.h"
 #include <thread>
 #include <atomic>

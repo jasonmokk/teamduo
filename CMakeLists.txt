@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.9)
-project(teamduo)
+project(teamduo0x2810x29)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 # Set CMAKE_BUILD_TYPE
 set(CMAKE_BUILD_TYPE Release)
@@ -44,7 +44,7 @@ include_directories(
   ${PROJECT_SOURCE_DIR}
   ${Boost_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
-  "include/teamduo"
+  "include/teamduo0x2810x29"
 )
 set (CMAKE_SKIP_BUILD_RPATH false)
 set (CMAKE_BUILD_WITH_INSTALL_RPATH true)
@@ -55,21 +55,21 @@ file(GLOB ${PROJECT_NAME}_C_SOURCES RELATIVE ${PROJECT_SOURCE_DIR} ${PROJECT_SOU
 ## Get list of .cpp files in project source directory
 file(GLOB ${PROJECT_NAME}_CPP_SOURCES RELATIVE ${PROJECT_SOURCE_DIR} ${PROJECT_SOURCE_DIR}/*.cpp)
 # Declare executable - Node
-add_executable(teamduo
+add_executable(TeamDuo0x2810x29
   src/slros_generic_param.cpp
+  src/TeamDuo0x2810x29.cpp
+  src/TeamDuo0x2810x29_data.cpp
   src/main.cpp
   src/rosnodeinterface.cpp
   src/slros_busmsg_conversion.cpp
   src/slros_initialize.cpp
-  src/teamduo.cpp
-  src/teamduo_data.cpp
 )
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-#target_compile_options(teamduo PUBLIC  $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>: -Wall -Wextra -Wpedantic >)
+#target_compile_options(TeamDuo0x2810x29 PUBLIC  $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>: -Wall -Wextra -Wpedantic >)
 endif()
-target_compile_options(teamduo PUBLIC 
+target_compile_options(TeamDuo0x2810x29 PUBLIC 
   $<$<OR:$<COMPILE_LANGUAGE:CXX>,$<COMPILE_LANGUAGE:C>>:
-  -DMODEL=teamduo
+  -DMODEL=TeamDuo0x2810x29
   -DNUMST=1
   -DNCSTATES=0
   -DHAVESTDIO
@@ -92,34 +92,34 @@ target_compile_options(teamduo PUBLIC
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
 add_dependencies(
-  teamduo
+  TeamDuo0x2810x29
   ${catkin_EXPORTED_TARGETS}
 )
-target_include_directories(teamduo PUBLIC
+target_include_directories(TeamDuo0x2810x29 PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(
-  teamduo 
+  TeamDuo0x2810x29 
     ${catkin_LIBRARIES}
     ${Boost_LIBRARIES}
     ${CMAKE_DL_LIBS}
 )
-install(TARGETS teamduo
+install(TARGETS TeamDuo0x2810x29
   EXPORT export_${PROJECT_NAME}
   DESTINATION lib/${PROJECT_NAME})
 foreach(file_i ${CUDA_BINS})
 add_custom_command(
-                   TARGET teamduo
+                   TARGET TeamDuo0x2810x29
                    POST_BUILD
                    COMMAND ${CMAKE_COMMAND}
-                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/codegen/exe/teamduo/${file_i}
+                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/codegen/exe/TeamDuo0x2810x29/${file_i}
 				   )
 add_custom_command(
-                   TARGET teamduo
+                   TARGET TeamDuo0x2810x29
                    POST_BUILD
                    COMMAND ${CMAKE_COMMAND}
-                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/teamduo_ert_rtw/${file_i}
+                   ARGS -E copy ${PROJECT_SOURCE_DIR}/src/${file_i} ${CATKIN_DEVEL_PREFIX}/TeamDuo0x2810x29_ert_rtw/${file_i}
 				   )
 endforeach(file_i)
-# Generated on Tue Oct 29 12:00:02 2024
+# Generated on Wed Oct 30 21:09:09 2024
