@@ -1,11 +1,11 @@
 //
 // File rosnodeinterface.cpp
 //
-// Code generated for Simulink model 'TeamDuo0x2810x29'.
+// Code generated for Simulink model 'teamduo'.
 //
-// Model version                  : 1.4
+// Model version                  : 2.0
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Oct 30 21:09:07 2024
+// C/C++ source code generated on : Wed Oct 30 21:46:41 2024
 //
 
 #ifdef _MSC_VER
@@ -30,7 +30,7 @@
 
 #endif                                 //_MSC_VER
 
-#include "TeamDuo0x2810x29.h"
+#include "teamduo.h"
 #include "rosnodeinterface.h"
 #include <thread>
 #include <chrono>
@@ -38,8 +38,8 @@
 #undef ROS_SET_RTM_ERROR_STATUS
 #undef ROS_GET_RTM_ERROR_STATUS
 #undef ROS_RTM_STEP_TASK
-#define ROS_SET_RTM_ERROR_STATUS(status) rtmSetErrorStatus(TeamDuo0x2810x29_M,(status));
-#define ROS_GET_RTM_ERROR_STATUS()     rtmGetErrorStatus(TeamDuo0x2810x29_M)
+#define ROS_SET_RTM_ERROR_STATUS(status) rtmSetErrorStatus(teamduo_M,(status));
+#define ROS_GET_RTM_ERROR_STATUS()     rtmGetErrorStatus(teamduo_M)
 #define ROS_RTM_STEP_TASK(id)          rtmStepTask({$ModelRTMVarName%},id)
 #ifndef RT_MEMORY_ALLOCATION_ERROR_DEF
 #define RT_MEMORY_ALLOCATION_ERROR_DEF
@@ -71,11 +71,11 @@ namespace ros
     {
       try {
         mNode = std::make_shared<ros::NodeHandle>();
-        ROS_INFO("** Starting the model \"TeamDuo0x2810x29\" **\n");
+        ROS_INFO("** Starting the model \"teamduo\" **\n");
 
         // initialize the model which will initialize the publishers and subscribers
         ROS_SET_RTM_ERROR_STATUS(NULL);
-        TeamDuo0x2810x29_initialize();
+        teamduo_initialize();
 
         // create the threads for the rates in the Model
         mBaseRateThread = std::make_shared<std::thread>(&NodeInterface::
@@ -110,7 +110,7 @@ namespace ros
 #else
 
       return (!(ROS_GET_RTM_ERROR_STATUS()
-                == (NULL)) || rtmGetStopRequested(TeamDuo0x2810x29_M));
+                == (NULL)) || rtmGetStopRequested(teamduo_M));
 
 #endif
 
@@ -128,7 +128,7 @@ namespace ros
           mSchedulerTimer.reset();
         }
 
-        TeamDuo0x2810x29_terminate();
+        teamduo_terminate();
         mNode.reset();
       }
     }
@@ -159,8 +159,8 @@ namespace ros
 
         if (!mRunModel)
           break;
-        TeamDuo0x2810x29_step(
-                              );
+        teamduo_step(
+                     );
         mRunModel = !NodeInterface::getStopRequestedFlag();
       }
 

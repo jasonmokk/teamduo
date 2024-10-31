@@ -1,15 +1,15 @@
 /*
- * TeamDuo0x2810x29_data.cpp
+ * teamduo_data.cpp
  *
  * Academic License - for use in teaching, academic research, and meeting
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * Code generation for model "TeamDuo0x2810x29".
+ * Code generation for model "teamduo".
  *
- * Model version              : 1.4
+ * Model version              : 2.0
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:09:00 2024
+ * C++ source code generated on : Wed Oct 30 21:46:31 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,10 +18,10 @@
  * Validation result: Not run
  */
 
-#include "TeamDuo0x2810x29.h"
+#include "teamduo.h"
 
 /* Block parameters (default storage) */
-P_TeamDuo0x2810x29_T TeamDuo0x2810x29_P = {
+P_teamduo_T teamduo_P = {
   /* Computed Parameter: Constant_Value
    * Referenced by: '<S1>/Constant'
    */

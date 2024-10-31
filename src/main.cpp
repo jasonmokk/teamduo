@@ -1,11 +1,11 @@
 //
 // File main.cpp
 //
-// Code generated for Simulink model 'TeamDuo0x2810x29'.
+// Code generated for Simulink model 'teamduo'.
 //
-// Model version                  : 1.4
+// Model version                  : 2.0
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Wed Oct 30 21:09:07 2024
+// C/C++ source code generated on : Wed Oct 30 21:46:41 2024
 //
 
 #include <stdio.h>

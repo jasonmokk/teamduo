@@ -5,11 +5,11 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * Code generation for model "TeamDuo0x2810x29".
+ * Code generation for model "teamduo".
  *
- * Model version              : 1.4
+ * Model version              : 2.0
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:09:00 2024
+ * C++ source code generated on : Wed Oct 30 21:46:31 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

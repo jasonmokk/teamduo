@@ -1,15 +1,15 @@
 /*
- * TeamDuo0x2810x29_types.h
+ * teamduo_types.h
  *
  * Academic License - for use in teaching, academic research, and meeting
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * Code generation for model "TeamDuo0x2810x29".
+ * Code generation for model "teamduo".
  *
- * Model version              : 1.4
+ * Model version              : 2.0
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:09:00 2024
+ * C++ source code generated on : Wed Oct 30 21:46:31 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,13 +18,13 @@
  * Validation result: Not run
  */
 
-#ifndef TeamDuo0x2810x29_types_h_
-#define TeamDuo0x2810x29_types_h_
+#ifndef teamduo_types_h_
+#define teamduo_types_h_
 #include "rtwtypes.h"
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_TeamDuo0x2810x29_std_msgs_Float64_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_TeamDuo0x2810x29_std_msgs_Float64_
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_teamduo_std_msgs_Float64_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_teamduo_std_msgs_Float64_
 
-struct SL_Bus_TeamDuo0x2810x29_std_msgs_Float64
+struct SL_Bus_teamduo_std_msgs_Float64
 {
   real_T Data;
 };
@@ -56,12 +56,12 @@ struct ros_slroscpp_internal_block_S_T
 #endif                              /* struct_ros_slroscpp_internal_block_S_T */
 
 /* Parameters for system: '<S4>/Enabled Subsystem' */
-typedef struct P_EnabledSubsystem_TeamDuo0x2_T_ P_EnabledSubsystem_TeamDuo0x2_T;
+typedef struct P_EnabledSubsystem_teamduo_T_ P_EnabledSubsystem_teamduo_T;
 
 /* Parameters (default storage) */
-typedef struct P_TeamDuo0x2810x29_T_ P_TeamDuo0x2810x29_T;
+typedef struct P_teamduo_T_ P_teamduo_T;
 
 /* Forward declaration for rtModel */
-typedef struct tag_RTM_TeamDuo0x2810x29_T RT_MODEL_TeamDuo0x2810x29_T;
+typedef struct tag_RTM_teamduo_T RT_MODEL_teamduo_T;
 
-#endif                                 /* TeamDuo0x2810x29_types_h_ */
+#endif                                 /* teamduo_types_h_ */

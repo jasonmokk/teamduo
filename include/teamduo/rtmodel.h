@@ -1,10 +1,10 @@
 /*
  * rtmodel.h
  *
- * Code generation for Simulink model "TeamDuo0x2810x29".
+ * Code generation for Simulink model "teamduo".
  *
  * Simulink Coder version                : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:09:00 2024
+ * C++ source code generated on : Wed Oct 30 21:46:31 2024
  *
  * Note that the generated code is not dependent on this header file.
  * The file is used in cojuction with the automatic build procedure.
@@ -15,7 +15,7 @@
 
 #ifndef rtmodel_h_
 #define rtmodel_h_
-#include "TeamDuo0x2810x29.h"
+#include "teamduo.h"
 
 /* Macros generated for backwards compatibility  */
 #ifndef rtmGetStopRequested

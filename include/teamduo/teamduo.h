@@ -1,15 +1,15 @@
 /*
- * TeamDuo0x2810x29.h
+ * teamduo.h
  *
  * Academic License - for use in teaching, academic research, and meeting
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * Code generation for model "TeamDuo0x2810x29".
+ * Code generation for model "teamduo".
  *
- * Model version              : 1.4
+ * Model version              : 2.0
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:09:00 2024
+ * C++ source code generated on : Wed Oct 30 21:46:31 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -18,13 +18,13 @@
  * Validation result: Not run
  */
 
-#ifndef TeamDuo0x2810x29_h_
-#define TeamDuo0x2810x29_h_
+#ifndef teamduo_h_
+#define teamduo_h_
 #include "rtwtypes.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "slros_initialize.h"
-#include "TeamDuo0x2810x29_types.h"
+#include "teamduo_types.h"
 #include <string.h>
 #include <stddef.h>
 
@@ -38,18 +38,18 @@
 #endif
 
 /* Block signals for system '<S4>/Enabled Subsystem' */
-struct B_EnabledSubsystem_TeamDuo0x2_T {
-  SL_Bus_TeamDuo0x2810x29_std_msgs_Float64 In1;/* '<S6>/In1' */
+struct B_EnabledSubsystem_teamduo_T {
+  SL_Bus_teamduo_std_msgs_Float64 In1; /* '<S6>/In1' */
 };
 
 /* Block signals (default storage) */
-struct B_TeamDuo0x2810x29_T {
-  B_EnabledSubsystem_TeamDuo0x2_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
-  B_EnabledSubsystem_TeamDuo0x2_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
+struct B_teamduo_T {
+  B_EnabledSubsystem_teamduo_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
+  B_EnabledSubsystem_teamduo_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
 };
 
 /* Block states (default storage) for system '<Root>' */
-struct DW_TeamDuo0x2810x29_T {
+struct DW_teamduo_T {
   ros_slroscpp_internal_block_P_T obj; /* '<S3>/SinkBlock' */
   ros_slroscpp_internal_block_S_T obj_e;/* '<S5>/SourceBlock' */
   ros_slroscpp_internal_block_S_T obj_n;/* '<S4>/SourceBlock' */
@@ -59,29 +59,29 @@ struct DW_TeamDuo0x2810x29_T {
 };
 
 /* Parameters for system: '<S4>/Enabled Subsystem' */
-struct P_EnabledSubsystem_TeamDuo0x2_T_ {
-  SL_Bus_TeamDuo0x2810x29_std_msgs_Float64 Out1_Y0;/* Computed Parameter: Out1_Y0
-                                                    * Referenced by: '<S6>/Out1'
-                                                    */
+struct P_EnabledSubsystem_teamduo_T_ {
+  SL_Bus_teamduo_std_msgs_Float64 Out1_Y0;/* Computed Parameter: Out1_Y0
+                                           * Referenced by: '<S6>/Out1'
+                                           */
 };
 
 /* Parameters (default storage) */
-struct P_TeamDuo0x2810x29_T_ {
-  SL_Bus_TeamDuo0x2810x29_std_msgs_Float64 Constant_Value;/* Computed Parameter: Constant_Value
-                                                           * Referenced by: '<S1>/Constant'
-                                                           */
-  SL_Bus_TeamDuo0x2810x29_std_msgs_Float64 Constant_Value_a;/* Computed Parameter: Constant_Value_a
-                                                             * Referenced by: '<S4>/Constant'
-                                                             */
-  SL_Bus_TeamDuo0x2810x29_std_msgs_Float64 Constant_Value_d;/* Computed Parameter: Constant_Value_d
-                                                             * Referenced by: '<S5>/Constant'
-                                                             */
-  P_EnabledSubsystem_TeamDuo0x2_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
-  P_EnabledSubsystem_TeamDuo0x2_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
+struct P_teamduo_T_ {
+  SL_Bus_teamduo_std_msgs_Float64 Constant_Value;/* Computed Parameter: Constant_Value
+                                                  * Referenced by: '<S1>/Constant'
+                                                  */
+  SL_Bus_teamduo_std_msgs_Float64 Constant_Value_a;/* Computed Parameter: Constant_Value_a
+                                                    * Referenced by: '<S4>/Constant'
+                                                    */
+  SL_Bus_teamduo_std_msgs_Float64 Constant_Value_d;/* Computed Parameter: Constant_Value_d
+                                                    * Referenced by: '<S5>/Constant'
+                                                    */
+  P_EnabledSubsystem_teamduo_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
+  P_EnabledSubsystem_teamduo_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
 };
 
 /* Real-time Model Data Structure */
-struct tag_RTM_TeamDuo0x2810x29_T {
+struct tag_RTM_teamduo_T {
   const char_T *errorStatus;
 };
 
@@ -93,7 +93,7 @@ extern "C"
 
 #endif
 
-  extern P_TeamDuo0x2810x29_T TeamDuo0x2810x29_P;
+  extern P_teamduo_T teamduo_P;
 
 #ifdef __cplusplus
 
@@ -109,7 +109,7 @@ extern "C"
 
 #endif
 
-  extern struct B_TeamDuo0x2810x29_T TeamDuo0x2810x29_B;
+  extern struct B_teamduo_T teamduo_B;
 
 #ifdef __cplusplus
 
@@ -118,7 +118,7 @@ extern "C"
 #endif
 
 /* Block states (default storage) */
-extern struct DW_TeamDuo0x2810x29_T TeamDuo0x2810x29_DW;
+extern struct DW_teamduo_T teamduo_DW;
 
 #ifdef __cplusplus
 
@@ -128,9 +128,9 @@ extern "C"
 #endif
 
   /* Model entry point functions */
-  extern void TeamDuo0x2810x29_initialize(void);
-  extern void TeamDuo0x2810x29_step(void);
-  extern void TeamDuo0x2810x29_terminate(void);
+  extern void teamduo_initialize(void);
+  extern void teamduo_step(void);
+  extern void teamduo_terminate(void);
 
 #ifdef __cplusplus
 
@@ -146,7 +146,7 @@ extern "C"
 
 #endif
 
-  extern RT_MODEL_TeamDuo0x2810x29_T *const TeamDuo0x2810x29_M;
+  extern RT_MODEL_teamduo_T *const teamduo_M;
 
 #ifdef __cplusplus
 
@@ -171,13 +171,13 @@ extern volatile boolean_T runModel;
  *
  * Here is the system hierarchy for this model
  *
- * '<Root>' : 'TeamDuo0x2810x29'
- * '<S1>'   : 'TeamDuo0x2810x29/Blank Message'
- * '<S2>'   : 'TeamDuo0x2810x29/MATLAB Function1'
- * '<S3>'   : 'TeamDuo0x2810x29/Publish'
- * '<S4>'   : 'TeamDuo0x2810x29/Subscribe'
- * '<S5>'   : 'TeamDuo0x2810x29/Subscribe1'
- * '<S6>'   : 'TeamDuo0x2810x29/Subscribe/Enabled Subsystem'
- * '<S7>'   : 'TeamDuo0x2810x29/Subscribe1/Enabled Subsystem'
+ * '<Root>' : 'teamduo'
+ * '<S1>'   : 'teamduo/Blank Message'
+ * '<S2>'   : 'teamduo/MATLAB Function1'
+ * '<S3>'   : 'teamduo/Publish'
+ * '<S4>'   : 'teamduo/Subscribe'
+ * '<S5>'   : 'teamduo/Subscribe1'
+ * '<S6>'   : 'teamduo/Subscribe/Enabled Subsystem'
+ * '<S7>'   : 'teamduo/Subscribe1/Enabled Subsystem'
  */
-#endif                                 /* TeamDuo0x2810x29_h_ */
+#endif                                 /* teamduo_h_ */
