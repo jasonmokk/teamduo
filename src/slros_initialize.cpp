@@ -9,6 +9,9 @@ SimulinkSubscriber<std_msgs::Float64, SL_Bus_teamduo_std_msgs_Float64> Sub_teamd
 // For Block teamduo/Subscribe1
 SimulinkSubscriber<std_msgs::Float64, SL_Bus_teamduo_std_msgs_Float64> Sub_teamduo_8;
 
+// For Block teamduo/Subscribe2
+SimulinkSubscriber<std_msgs::Float64, SL_Bus_teamduo_std_msgs_Float64> Sub_teamduo_9;
+
 // For Block teamduo/Publish
 SimulinkPublisher<std_msgs::Float64, SL_Bus_teamduo_std_msgs_Float64> Pub_teamduo_6;
 

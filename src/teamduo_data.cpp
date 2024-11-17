@@ -7,9 +7,9 @@
  *
  * Code generation for model "teamduo".
  *
- * Model version              : 2.0
+ * Model version              : 2.5
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:46:31 2024
+ * C++ source code generated on : Sat Nov 16 17:51:09 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -43,10 +43,30 @@ P_teamduo_T teamduo_P = {
     0.0                                /* Data */
   },
 
+  /* Computed Parameter: Constant_Value_l
+   * Referenced by: '<S6>/Constant'
+   */
+  {
+    0.0                                /* Data */
+  },
+
+  /* Start of '<S6>/Enabled Subsystem' */
+  {
+    /* Computed Parameter: Out1_Y0
+     * Referenced by: '<S9>/Out1'
+     */
+    {
+      0.0                              /* Data */
+    }
+  }
+  ,
+
+  /* End of '<S6>/Enabled Subsystem' */
+
   /* Start of '<S5>/Enabled Subsystem' */
   {
     /* Computed Parameter: Out1_Y0
-     * Referenced by: '<S7>/Out1'
+     * Referenced by: '<S8>/Out1'
      */
     {
       0.0                              /* Data */
@@ -59,7 +79,7 @@ P_teamduo_T teamduo_P = {
   /* Start of '<S4>/Enabled Subsystem' */
   {
     /* Computed Parameter: Out1_Y0
-     * Referenced by: '<S6>/Out1'
+     * Referenced by: '<S7>/Out1'
      */
     {
       0.0                              /* Data */

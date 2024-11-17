@@ -7,9 +7,9 @@
  *
  * Code generation for model "teamduo".
  *
- * Model version              : 2.0
+ * Model version              : 2.5
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Wed Oct 30 21:46:31 2024
+ * C++ source code generated on : Sat Nov 16 17:51:09 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -39,11 +39,12 @@
 
 /* Block signals for system '<S4>/Enabled Subsystem' */
 struct B_EnabledSubsystem_teamduo_T {
-  SL_Bus_teamduo_std_msgs_Float64 In1; /* '<S6>/In1' */
+  SL_Bus_teamduo_std_msgs_Float64 In1; /* '<S7>/In1' */
 };
 
 /* Block signals (default storage) */
 struct B_teamduo_T {
+  B_EnabledSubsystem_teamduo_T EnabledSubsystem_h;/* '<S6>/Enabled Subsystem' */
   B_EnabledSubsystem_teamduo_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
   B_EnabledSubsystem_teamduo_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
 };
@@ -51,9 +52,11 @@ struct B_teamduo_T {
 /* Block states (default storage) for system '<Root>' */
 struct DW_teamduo_T {
   ros_slroscpp_internal_block_P_T obj; /* '<S3>/SinkBlock' */
+  ros_slroscpp_internal_block_S_T obj_d;/* '<S6>/SourceBlock' */
   ros_slroscpp_internal_block_S_T obj_e;/* '<S5>/SourceBlock' */
   ros_slroscpp_internal_block_S_T obj_n;/* '<S4>/SourceBlock' */
-  boolean_T objisempty;                /* '<S5>/SourceBlock' */
+  boolean_T objisempty;                /* '<S6>/SourceBlock' */
+  boolean_T objisempty_i;              /* '<S5>/SourceBlock' */
   boolean_T objisempty_l;              /* '<S4>/SourceBlock' */
   boolean_T objisempty_a;              /* '<S3>/SinkBlock' */
 };
@@ -61,7 +64,7 @@ struct DW_teamduo_T {
 /* Parameters for system: '<S4>/Enabled Subsystem' */
 struct P_EnabledSubsystem_teamduo_T_ {
   SL_Bus_teamduo_std_msgs_Float64 Out1_Y0;/* Computed Parameter: Out1_Y0
-                                           * Referenced by: '<S6>/Out1'
+                                           * Referenced by: '<S7>/Out1'
                                            */
 };
 
@@ -76,6 +79,10 @@ struct P_teamduo_T_ {
   SL_Bus_teamduo_std_msgs_Float64 Constant_Value_d;/* Computed Parameter: Constant_Value_d
                                                     * Referenced by: '<S5>/Constant'
                                                     */
+  SL_Bus_teamduo_std_msgs_Float64 Constant_Value_l;/* Computed Parameter: Constant_Value_l
+                                                    * Referenced by: '<S6>/Constant'
+                                                    */
+  P_EnabledSubsystem_teamduo_T EnabledSubsystem_h;/* '<S6>/Enabled Subsystem' */
   P_EnabledSubsystem_teamduo_T EnabledSubsystem_f;/* '<S5>/Enabled Subsystem' */
   P_EnabledSubsystem_teamduo_T EnabledSubsystem;/* '<S4>/Enabled Subsystem' */
 };
@@ -177,7 +184,9 @@ extern volatile boolean_T runModel;
  * '<S3>'   : 'teamduo/Publish'
  * '<S4>'   : 'teamduo/Subscribe'
  * '<S5>'   : 'teamduo/Subscribe1'
- * '<S6>'   : 'teamduo/Subscribe/Enabled Subsystem'
- * '<S7>'   : 'teamduo/Subscribe1/Enabled Subsystem'
+ * '<S6>'   : 'teamduo/Subscribe2'
+ * '<S7>'   : 'teamduo/Subscribe/Enabled Subsystem'
+ * '<S8>'   : 'teamduo/Subscribe1/Enabled Subsystem'
+ * '<S9>'   : 'teamduo/Subscribe2/Enabled Subsystem'
  */
 #endif                                 /* teamduo_h_ */
