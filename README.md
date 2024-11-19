@@ -1,8 +1,3 @@
 Max and Jason's CS 3891 Project
 
-This controller will keep the car a safe distance between the ego and the lead car
-
-Test at speeds of no more than 60 mph. The controller is supposed to match the lead car's velocity. The ego velocity will fluctuate but hopefully not by too much that it becomes bothersome to the driver. Higher speeds will give higher space gaps.
-
-We don't have any way to account for rapid changes to the input into the controller, like erratic driving from the lead car.
-
+This controller calculates the appropriate space gap by multiplying our desired time gap of 3 seconds by the ego velocity, and using it to calculate the desired acceleration to correct the discrepancy between the desired and actual space gaps. The acceleration is also capped at 3m/s^2 to rapid changes in speed. 
