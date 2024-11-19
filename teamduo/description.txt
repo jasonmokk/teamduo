@@ -1,0 +1,1 @@
+This controller aims to maintain smooth and safe driving by calculating the appropriate space gap based on a time-gap threshold and adjusting the ego car's acceleration proportionally to minimize distance error and relative velocity.
