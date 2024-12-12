@@ -3,9 +3,9 @@
 //
 // Code generated for Simulink model 'teamduo'.
 //
-// Model version                  : 2.5
+// Model version                  : 2.1
 // Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
-// C/C++ source code generated on : Sat Nov 16 17:51:31 2024
+// C/C++ source code generated on : Wed Dec 11 13:40:17 2024
 //
 
 #ifdef _MSC_VER

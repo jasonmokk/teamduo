@@ -7,9 +7,9 @@
  *
  * Code generation for model "teamduo".
  *
- * Model version              : 2.5
+ * Model version              : 2.1
  * Simulink Coder version : 24.2 (R2024b) 21-Jun-2024
- * C++ source code generated on : Sat Nov 16 17:51:09 2024
+ * C++ source code generated on : Wed Dec 11 13:40:08 2024
  *
  * Target selection: ert.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -77,6 +77,17 @@ void teamduo_step(void)
   real_T rtb_cmd_accel;
   boolean_T b_varargout_1;
 
+  /* Outputs for Atomic SubSystem: '<Root>/Subscribe' */
+  /* MATLABSystem: '<S4>/SourceBlock' */
+  b_varargout_1 = Sub_teamduo_7.getLatestMessage(&tmp);
+
+  /* Outputs for Enabled SubSystem: '<S4>/Enabled Subsystem' */
+  /* Start for MATLABSystem: '<S4>/SourceBlock' */
+  teamduo_EnabledSubsystem(b_varargout_1, &tmp, &teamduo_B.EnabledSubsystem);
+
+  /* End of Outputs for SubSystem: '<S4>/Enabled Subsystem' */
+  /* End of Outputs for SubSystem: '<Root>/Subscribe' */
+
   /* Outputs for Atomic SubSystem: '<Root>/Subscribe2' */
   /* MATLABSystem: '<S6>/SourceBlock' */
   b_varargout_1 = Sub_teamduo_9.getLatestMessage(&tmp);
@@ -99,21 +110,10 @@ void teamduo_step(void)
   /* End of Outputs for SubSystem: '<S5>/Enabled Subsystem' */
   /* End of Outputs for SubSystem: '<Root>/Subscribe1' */
 
-  /* Outputs for Atomic SubSystem: '<Root>/Subscribe' */
-  /* MATLABSystem: '<S4>/SourceBlock' */
-  b_varargout_1 = Sub_teamduo_7.getLatestMessage(&tmp);
-
-  /* Outputs for Enabled SubSystem: '<S4>/Enabled Subsystem' */
-  /* Start for MATLABSystem: '<S4>/SourceBlock' */
-  teamduo_EnabledSubsystem(b_varargout_1, &tmp, &teamduo_B.EnabledSubsystem);
-
-  /* End of Outputs for SubSystem: '<S4>/Enabled Subsystem' */
-  /* End of Outputs for SubSystem: '<Root>/Subscribe' */
-
   /* MATLAB Function: '<Root>/MATLAB Function1' */
   rtb_cmd_accel = (teamduo_B.EnabledSubsystem.In1.Data - 3.0 *
-                   teamduo_B.EnabledSubsystem_f.In1.Data) + 2.0 *
-    -teamduo_B.EnabledSubsystem_h.In1.Data;
+                   teamduo_B.EnabledSubsystem_f.In1.Data) * 0.007 + 0.3 *
+    teamduo_B.EnabledSubsystem_h.In1.Data;
   if (rtb_cmd_accel > 3.0) {
     rtb_cmd_accel = 3.0;
   } else if (rtb_cmd_accel < -3.0) {
@@ -146,13 +146,28 @@ void teamduo_initialize(void)
                 sizeof(DW_teamduo_T));
 
   {
-    char_T b_zeroDelimTopic_0[17];
-    char_T b_zeroDelimTopic_1[11];
-    char_T b_zeroDelimTopic[9];
-    static const char_T b_zeroDelimTopic_2[9] = "/rel_vel";
-    static const char_T b_zeroDelimTopic_3[17] = "/car/state/vel_x";
-    static const char_T b_zeroDelimTopic_4[11] = "/lead_dist";
+    char_T b_zeroDelimTopic_1[17];
+    char_T b_zeroDelimTopic[11];
+    char_T b_zeroDelimTopic_0[9];
+    static const char_T b_zeroDelimTopic_2[11] = "/lead_dist";
+    static const char_T b_zeroDelimTopic_3[9] = "/rel_vel";
+    static const char_T b_zeroDelimTopic_4[17] = "/car/state/vel_x";
     static const char_T b_zeroDelimTopic_5[11] = "/cmd_accel";
+
+    /* Start for Atomic SubSystem: '<Root>/Subscribe' */
+    /* Start for MATLABSystem: '<S4>/SourceBlock' */
+    teamduo_DW.obj_n.matlabCodegenIsDeleted = false;
+    teamduo_DW.objisempty_l = true;
+    teamduo_DW.obj_n.isInitialized = 1;
+    for (int32_T i = 0; i < 11; i++) {
+      b_zeroDelimTopic[i] = b_zeroDelimTopic_2[i];
+    }
+
+    Sub_teamduo_7.createSubscriber(&b_zeroDelimTopic[0], 1);
+    teamduo_DW.obj_n.isSetupComplete = true;
+
+    /* End of Start for MATLABSystem: '<S4>/SourceBlock' */
+    /* End of Start for SubSystem: '<Root>/Subscribe' */
 
     /* Start for Atomic SubSystem: '<Root>/Subscribe2' */
     /* Start for MATLABSystem: '<S6>/SourceBlock' */
@@ -160,10 +175,10 @@ void teamduo_initialize(void)
     teamduo_DW.objisempty = true;
     teamduo_DW.obj_d.isInitialized = 1;
     for (int32_T i = 0; i < 9; i++) {
-      b_zeroDelimTopic[i] = b_zeroDelimTopic_2[i];
+      b_zeroDelimTopic_0[i] = b_zeroDelimTopic_3[i];
     }
 
-    Sub_teamduo_9.createSubscriber(&b_zeroDelimTopic[0], 1);
+    Sub_teamduo_9.createSubscriber(&b_zeroDelimTopic_0[0], 1);
     teamduo_DW.obj_d.isSetupComplete = true;
 
     /* End of Start for MATLABSystem: '<S6>/SourceBlock' */
@@ -175,29 +190,14 @@ void teamduo_initialize(void)
     teamduo_DW.objisempty_i = true;
     teamduo_DW.obj_e.isInitialized = 1;
     for (int32_T i = 0; i < 17; i++) {
-      b_zeroDelimTopic_0[i] = b_zeroDelimTopic_3[i];
+      b_zeroDelimTopic_1[i] = b_zeroDelimTopic_4[i];
     }
 
-    Sub_teamduo_8.createSubscriber(&b_zeroDelimTopic_0[0], 1);
+    Sub_teamduo_8.createSubscriber(&b_zeroDelimTopic_1[0], 1);
     teamduo_DW.obj_e.isSetupComplete = true;
 
     /* End of Start for MATLABSystem: '<S5>/SourceBlock' */
     /* End of Start for SubSystem: '<Root>/Subscribe1' */
-
-    /* Start for Atomic SubSystem: '<Root>/Subscribe' */
-    /* Start for MATLABSystem: '<S4>/SourceBlock' */
-    teamduo_DW.obj_n.matlabCodegenIsDeleted = false;
-    teamduo_DW.objisempty_l = true;
-    teamduo_DW.obj_n.isInitialized = 1;
-    for (int32_T i = 0; i < 11; i++) {
-      b_zeroDelimTopic_1[i] = b_zeroDelimTopic_4[i];
-    }
-
-    Sub_teamduo_7.createSubscriber(&b_zeroDelimTopic_1[0], 1);
-    teamduo_DW.obj_n.isSetupComplete = true;
-
-    /* End of Start for MATLABSystem: '<S4>/SourceBlock' */
-    /* End of Start for SubSystem: '<Root>/Subscribe' */
 
     /* Start for Atomic SubSystem: '<Root>/Publish' */
     /* Start for MATLABSystem: '<S3>/SinkBlock' */
@@ -205,15 +205,23 @@ void teamduo_initialize(void)
     teamduo_DW.objisempty_a = true;
     teamduo_DW.obj.isInitialized = 1;
     for (int32_T i = 0; i < 11; i++) {
-      b_zeroDelimTopic_1[i] = b_zeroDelimTopic_5[i];
+      b_zeroDelimTopic[i] = b_zeroDelimTopic_5[i];
     }
 
-    Pub_teamduo_6.createPublisher(&b_zeroDelimTopic_1[0], 1);
+    Pub_teamduo_6.createPublisher(&b_zeroDelimTopic[0], 1);
     teamduo_DW.obj.isSetupComplete = true;
 
     /* End of Start for MATLABSystem: '<S3>/SinkBlock' */
     /* End of Start for SubSystem: '<Root>/Publish' */
   }
+
+  /* SystemInitialize for Atomic SubSystem: '<Root>/Subscribe' */
+  /* SystemInitialize for Enabled SubSystem: '<S4>/Enabled Subsystem' */
+  teamduo_EnabledSubsystem_Init(&teamduo_B.EnabledSubsystem,
+    &teamduo_P.EnabledSubsystem);
+
+  /* End of SystemInitialize for SubSystem: '<S4>/Enabled Subsystem' */
+  /* End of SystemInitialize for SubSystem: '<Root>/Subscribe' */
 
   /* SystemInitialize for Atomic SubSystem: '<Root>/Subscribe2' */
   /* SystemInitialize for Enabled SubSystem: '<S6>/Enabled Subsystem' */
@@ -230,19 +238,20 @@ void teamduo_initialize(void)
 
   /* End of SystemInitialize for SubSystem: '<S5>/Enabled Subsystem' */
   /* End of SystemInitialize for SubSystem: '<Root>/Subscribe1' */
-
-  /* SystemInitialize for Atomic SubSystem: '<Root>/Subscribe' */
-  /* SystemInitialize for Enabled SubSystem: '<S4>/Enabled Subsystem' */
-  teamduo_EnabledSubsystem_Init(&teamduo_B.EnabledSubsystem,
-    &teamduo_P.EnabledSubsystem);
-
-  /* End of SystemInitialize for SubSystem: '<S4>/Enabled Subsystem' */
-  /* End of SystemInitialize for SubSystem: '<Root>/Subscribe' */
 }
 
 /* Model terminate function */
 void teamduo_terminate(void)
 {
+  /* Terminate for Atomic SubSystem: '<Root>/Subscribe' */
+  /* Terminate for MATLABSystem: '<S4>/SourceBlock' */
+  if (!teamduo_DW.obj_n.matlabCodegenIsDeleted) {
+    teamduo_DW.obj_n.matlabCodegenIsDeleted = true;
+  }
+
+  /* End of Terminate for MATLABSystem: '<S4>/SourceBlock' */
+  /* End of Terminate for SubSystem: '<Root>/Subscribe' */
+
   /* Terminate for Atomic SubSystem: '<Root>/Subscribe2' */
   /* Terminate for MATLABSystem: '<S6>/SourceBlock' */
   if (!teamduo_DW.obj_d.matlabCodegenIsDeleted) {
@@ -260,15 +269,6 @@ void teamduo_terminate(void)
 
   /* End of Terminate for MATLABSystem: '<S5>/SourceBlock' */
   /* End of Terminate for SubSystem: '<Root>/Subscribe1' */
-
-  /* Terminate for Atomic SubSystem: '<Root>/Subscribe' */
-  /* Terminate for MATLABSystem: '<S4>/SourceBlock' */
-  if (!teamduo_DW.obj_n.matlabCodegenIsDeleted) {
-    teamduo_DW.obj_n.matlabCodegenIsDeleted = true;
-  }
-
-  /* End of Terminate for MATLABSystem: '<S4>/SourceBlock' */
-  /* End of Terminate for SubSystem: '<Root>/Subscribe' */
 
   /* Terminate for Atomic SubSystem: '<Root>/Publish' */
   /* Terminate for MATLABSystem: '<S3>/SinkBlock' */
